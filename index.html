@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aila Nik</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="#">aila nik</a>
+    <div class="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#research">Research</a><a href="#work">Work</a><a href="#interests">Interests</a><a href="#contact">Contact</a></div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>hi, I'm <em>Aila</em>.</h1>
+      <p class="say">(eye-lah) · software developer · victoria, bc</p>
+      <p class="lede">I build systems that keep working when parts of them don't.</p>
+      <p class="intro">Two years in a research lab getting distributed systems to agree with each other. Now I build across the stack: consensus, PyTorch models, and the front ends people actually click on.</p>
+      <div class="facts">
+        <div><span class="k">now</span><span class="v">open to junior SWE roles</span></div>
+        <div><span class="k">research</span><span class="v">2 peer-reviewed papers</span></div>
+        <a href="https://github.com/AilaNikrftr"><span class="k">github</span><span class="v">AilaNikrftr ↗</span></a>
+      </div>
+    </div>
+    <div class="portrait">
+      <canvas id="hero" aria-label="A portrait of me drawn with the network traffic of a live Raft cluster of about 2,500 nodes that you can crash and partition"></canvas>
+      <div class="cap">
+        <span>this portrait is drawn by a live <b>Raft cluster's</b> network traffic. ~2,500 nodes are wired to their neighbours; 7 of them (S1–S7) vote and elect a leader. every heartbeat, the leader's messages ripple across the wires and the replies come back. a client writes the picture into the log one band at a time, and a node only lights its wires once that entry is committed on it.</span>
+        <div class="toolbar" role="group" aria-label="Break the cluster">
+          <button type="button" class="tool" data-tool="crash" aria-pressed="true">✕ crash nodes</button>
+          <button type="button" class="tool" data-tool="partition" aria-pressed="false">⟋ cut the network</button>
+          <button type="button" class="act" id="heal">heal cut</button>
+          <button type="button" class="act" id="revive">restart all</button>
+          <button type="button" class="act" id="prevote" aria-pressed="true">pre-vote: on</button>
+          <button type="button" class="act" id="replay">replay</button>
+        </div>
+        <span class="hint" id="hint"></span>
+        <span class="live" id="stats">&nbsp;</span>
+        <div class="events" id="events"></div>
+        <div class="goals" id="goals"></div>
+        <details class="legend"><summary>what am I looking at?</summary>
+          <p><b class="c-l">purple</b> leader · <b class="c-c">pink</b> candidate · moving streaks are messages crossing the wires: <b class="c-l">AppendEntries</b> going out, <b class="c-t">replies</b> coming back, <b class="c-c">vote requests</b> between servers. wires glow brighter right after traffic crosses them. pink wires belong to nodes that are out of touch: their copy of the log is behind, so a read from them would be stale.</p>
+          <p>Raft picks consistency over availability (the C in CAP): when you cut the network, only the side with at least 4 of the 7 servers can keep committing. the other side keeps holding elections it can never win, and its terms climb. with <b>pre-vote</b> off (plain Raft), healing the cut lets those inflated terms knock out the healthy leader, and the whole picture goes pink while a new one is elected. with pre-vote on (what etcd does), a server first asks whether it could win (<b class="c-o">orange</b> messages), the others refuse because they still hear a leader, and healing is seamless.</p>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="about">
+      <div>
+        <p>I studied Computer Science at the University of Manitoba and graduated with First Class Honours. Along the way I spent two years as a software developer at the TCDT Lab, working on rollups, blockchain interoperability and sequencer decentralization in Go and Solidity.</p>
+        <p>Most of what I like building has the same shape: lots of independent pieces that have to end up agreeing, like the dots in that portrait.</p>
+        
+      </div>
+      <ul class="stack">
+        <li>Python</li><li>PyTorch</li><li>TypeScript</li><li>React</li><li>Django</li><li>C# / .NET</li><li>Go</li><li>Solidity</li><li>Java</li><li>Kotlin</li><li>Distributed systems</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="row"><span class="when">Jan 2024 – Dec 2025</span><div><h3>Software Developer <span>· TCDT Lab</span></h3><p>Two years building distributed systems and blockchain tooling. Designed rollup architecture and tools for an ACM SoK on blockchain interoperability, and wrote my honours paper on decentralizing rollup sequencers with Raft.</p></div><span class="tg">go · solidity</span></div>
+    <div class="row"><span class="when">Jun – Sep 2024</span><div><h3>Undergraduate Research Assistant <span>· University of Manitoba</span></h3><p>Summer research position, funded by an NSERC Undergraduate Student Research Award.</p></div><span class="tg">go · latex</span></div>
+    <div class="row"><span class="when">2025 – 2026</span><div><h3>Teaching Assistant &amp; Grader <span>· University of Manitoba</span></h3><p>Classroom TA and grader for COMP 1010 (Introduction to Computer Science), and grader for COMP 3030 (Automata Theory and Formal Languages).</p></div><span class="tg">teaching</span></div>
+    <div class="row"><span class="when">2018 – 2019</span><div><h3>English Teacher</h3><p>A year teaching classes of about 15 students aged 9 to 16.</p></div><span class="tg">teaching</span></div>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <div class="row"><span class="when">ACM · SoK</span><div><h3>Systematization of Knowledge on Blockchain Interoperability</h3><p>Second author. My part was the architecture, tools and system design of rollups.</p></div><span class="tg">peer-reviewed</span></div>
+    <div class="row"><span class="when">Springer · ASONAM</span><div><h3>Gender-Specific Cardiac Symptom Recognition</h3><p>Health informatics work on how heart symptoms present differently across genders.</p></div><span class="tg">peer-reviewed</span></div>
+    <div class="row"><span class="when">Honours paper</span><div><h3>Sequencer Decentralization via Raft with Sharding-Based Performance Optimization in Rollups</h3><p>Replaces a single rollup sequencer with a Raft cluster, then shards it to win back throughput.</p></div><span class="tg">ieee draft</span></div>
+  </section>
+
+  <section id="work">
+    <h2>Selected work</h2>
+    <div class="row"><span class="when">raft · distributed</span><div><h3>Raft KV Store</h3><p>A distributed key-value store that survives node failures using Raft consensus.</p></div><a class="tg" href="https://github.com/AilaNikrftr">code ↗</a></div>
+    <div class="row"><span class="when">pytorch · cv</span><div><h3>DefectLens</h3><p>Industrial defect detection: spotting flaws in manufactured parts from images.</p></div><a class="tg" href="https://github.com/AilaNikrftr">code ↗</a></div>
+    <div class="row"><span class="when">pytorch</span><div><h3>TrajCast</h3><p>Forecasts where pedestrians will walk next, trained on the ETH/UCY datasets.</p></div><a class="tg" href="https://github.com/AilaNikrftr">code ↗</a></div>
+    <div class="row"><span class="when">llm · rag</span><div><h3>TestLens</h3><p>An LLM agent with retrieval that answers questions about test verification data.</p></div><a class="tg" href="https://github.com/AilaNikrftr">code ↗</a></div>
+    <div class="row"><span class="when">django · react</span><div><h3>Tally</h3><p>A full-stack expense tracker with a REST API and a typed front end.</p></div><a class="tg" href="https://github.com/AilaNikrftr">code ↗</a></div>
+    <div class="row"><span class="when">c# · angular</span><div><h3>ShiftWise</h3><p>Workforce scheduling: build shifts, assign people, catch conflicts.</p></div><a class="tg" href="https://github.com/AilaNikrftr">code ↗</a></div>
+    <div class="row"><span class="when">java · game ai</span><div><h3>Gol ya Pooch</h3><p>The Iranian folk game "flower or empty", rebuilt in Java with AI opponents.</p></div><a class="tg" href="https://github.com/AilaNikrftr">code ↗</a></div>
+  </section>
+
+  <section id="interests">
+    <h2>Off the keyboard</h2>
+    <div class="interests">
+      <div class="int"><span class="k">strings</span><h3>Classical violin</h3><p>The original distributed system: a whole orchestra staying in sync with no shared clock.</p></div>
+      <div class="int"><span class="k">yarn</span><h3>Crochet</h3><p>Turning one long thread into a structure, one stitch at a time. Basically a linked list you can wear.</p></div>
+      <div class="int"><span class="k">rock &amp; trail</span><h3>Climbing and hiking</h3><p>Problem-solving on walls, and Vancouver Island trails on weekends.</p></div>
+      <div class="int"><span class="k">words</span><h3>Languages</h3><p>Persian and Azerbaijani Turkish from home, English every day, and currently learning French and German. I like linguistics for the same reason I like protocols.</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <h3>Say hi.</h3>
+    <p>I'm looking for junior software developer roles, especially backend, distributed systems or applied ML. My inbox is open.</p>
+    <div class="btns">
+      <a class="btn main" href="mailto:hello@example.com">Email me</a>
+      <a class="btn" href="https://github.com/AilaNikrftr">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/aila-nik-941a06223/">LinkedIn</a>
+      <a class="btn" href="#">Résumé</a>
+    </div>
+    <p class="mail">hello@example.com</p>
+  </section>
+
+  <footer><span>Built and designed by Aila Nik.</span><span id="foot">portrait: live raft traffic, ~2,500 nodes</span></footer>
+</div>
+
+<script src="raft-portrait.js"></script>
+</body>
+</html>
