@@ -8,7 +8,7 @@ A one-page portfolio. The portrait is a live Raft cluster drawn by its own netwo
 - `raft-portrait.js` – the Raft simulation and portrait drawing (settings like node count and timings are near the top)
 - the portrait itself is stored as ~2,500 node positions inside `raft-portrait.js` (no photo is shipped)
 
-## Before launch, replace
+TO Do
 - `hello@example.com` (two places in index.html)
 - the LinkedIn and Résumé links (`href="#"`)
 - each project's `code ↗` link
