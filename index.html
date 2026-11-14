@@ -109,7 +109,22 @@
       <div class="int"><span class="k">strings</span><h3>Classical violin</h3><p>The original distributed system: a whole orchestra staying in sync with no shared clock.</p></div>
       <div class="int"><span class="k">yarn</span><h3>Crochet</h3><p>Turning one long thread into a structure, one stitch at a time. Basically a linked list you can wear.</p></div>
       <div class="int"><span class="k">rock &amp; trail</span><h3>Climbing and hiking</h3><p>Problem-solving on walls, and Vancouver Island trails on weekends.</p></div>
-      <div class="int"><span class="k">words</span><h3>Languages</h3><p>Persian and Azerbaijani Turkish from home, English every day, and currently learning French and German. I like linguistics for the same reason I like protocols.</p></div>
+      <div class="int langs"><span class="k">words</span><h3>Languages</h3><p>Persian and Azerbaijani Turkish from home, English every day, and currently learning French and German. I like linguistics for the same reason I like protocols. Tap one to learn a little about it.</p>
+        <ul class="langlist">
+          <li><button type="button" class="lang" data-lang="fa" data-n="6" aria-expanded="false" aria-controls="langpop"><span class="ln" lang="fa" dir="rtl">فارسی</span><span class="le">Persian</span><span class="lv">native · C2</span><span class="meter" aria-hidden="true"></span></button></li>
+          <li><button type="button" class="lang" data-lang="az" data-n="6" aria-expanded="false" aria-controls="langpop"><span class="ln" lang="az">Azərbaycanca</span><span class="le">Azerbaijani</span><span class="lv">native · C2</span><span class="meter" aria-hidden="true"></span></button></li>
+          <li><button type="button" class="lang" data-lang="en" data-n="6" aria-expanded="false" aria-controls="langpop"><span class="ln" lang="en">English</span><span class="le">English</span><span class="lv">native · C2</span><span class="meter" aria-hidden="true"></span></button></li>
+          <li><button type="button" class="lang" data-lang="tr" data-n="4" aria-expanded="false" aria-controls="langpop"><span class="ln" lang="tr">Türkçe</span><span class="le">Turkish</span><span class="lv">B2</span><span class="meter" aria-hidden="true"></span></button></li>
+          <li><button type="button" class="lang" data-lang="fr" data-n="2.5" aria-expanded="false" aria-controls="langpop"><span class="ln" lang="fr">Français</span><span class="le">French</span><span class="lv">A2 / B1</span><span class="meter" aria-hidden="true"></span></button></li>
+          <li><button type="button" class="lang" data-lang="de" data-n="1" aria-expanded="false" aria-controls="langpop"><span class="ln" lang="de">Deutsch</span><span class="le">German</span><span class="lv">A1</span><span class="meter" aria-hidden="true"></span></button></li>
+        </ul>
+        <div class="langpop" id="langpop" role="dialog" aria-labelledby="langpop-t" hidden>
+          <button type="button" class="lp-x" aria-label="Close">✕</button>
+          <div class="lp-head"><span class="lp-t" id="langpop-t"></span><span class="lp-lv"></span></div>
+          <p class="lp-fam"></p>
+          <ul class="lp-facts"></ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -129,5 +144,6 @@
 </div>
 
 <script src="raft-portrait.js"></script>
+<script src="languages.js"></script>
 </body>
 </html>
