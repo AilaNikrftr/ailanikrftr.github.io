@@ -107,7 +107,7 @@ footer { padding: 26px 0 40px; display: flex; justify-content: space-between; ga
 @media (max-width: 820px) { .interests { grid-template-columns: 1fr; } }
 
 /* violin */
-.int p.played { margin-top: 10px; }
+.int p.played { margin-top: 0; }
 .int p.played i { color: var(--text); }
 .listen { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 12px; font-family: var(--mono); font-size: 12px; }
 .listen span { color: var(--muted); margin-right: 4px; }
