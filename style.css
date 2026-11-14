@@ -112,8 +112,6 @@ footer { padding: 26px 0 40px; display: flex; justify-content: space-between; ga
 .lang { width: 100%; display: grid; grid-template-columns: 1fr auto 62px; align-items: baseline; gap: 12px; font: inherit; color: var(--text); text-align: left; background: none; border: 0; border-top: 1px solid var(--line); padding: 9px 2px; cursor: pointer; }
 .langlist li:last-child .lang { border-bottom: 1px solid var(--line); }
 .lang .ln { font-family: var(--display); font-weight: 500; font-size: 17px; }
-.lang .ln[dir="rtl"] { justify-self: start; }
-.lang .le { display: none; }
 .lang .lv { font-family: var(--mono); font-size: 12px; color: var(--muted); }
 .lang:hover .ln, .lang[aria-expanded="true"] .ln { color: var(--accent); }
 .lang:hover .lv, .lang[aria-expanded="true"] .lv { color: var(--text); }
